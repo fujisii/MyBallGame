@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PaddleScript : MonoBehaviour
 {
+    // private float speed;
+    public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // speed = 5f;
     }
 
     // Update is called once per frame
@@ -19,7 +22,7 @@ public class PaddleScript : MonoBehaviour
         // それを解決する方法として Time.deltaTime を使うと良い
         // -> 遅いマシンでは大きな値、速いマシンでは小さな値をかけてくれる
         //   -> 結果としてどのマシンでも同じ速度になる
-        transform.position += new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime, 0f, 0f);
+        transform.position += new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 0f, 0f);
         // Debug.Log(transform.position.x);
     }
 }

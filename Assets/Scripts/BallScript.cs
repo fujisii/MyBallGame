@@ -17,4 +17,12 @@ public class BallScript : MonoBehaviour
     {
         transform.position += new Vector3(0f, 0f, -1 * speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Paddle"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

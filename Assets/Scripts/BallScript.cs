@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallScript : MonoBehaviour
 {
@@ -20,9 +21,11 @@ public class BallScript : MonoBehaviour
         // ボールを逃したらゲームオーバー
         if (transform.position.z < -13.0f)
         {
-            Debug.Log("Game Over");
-            // ゲーム内の時間を止める
-            Time.timeScale = 0;
+            // Debug.Log("Game Over");
+            // // ゲーム内の時間を止める
+            // Time.timeScale = 0;
+
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 
